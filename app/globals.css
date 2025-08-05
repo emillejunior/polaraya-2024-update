@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -118,5 +119,111 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.scroll-wrapper {
+  position: relative;
+  /* height: 200px; */
+  overflow-x: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.scroll-item {
+  position: absolute;
+  width: 200px;
+  /* height: 200px; */
+  /* left: max(calc(200px * 8), 100%); */
+  /* animation-name: scrollLeft; */
+  animation-duration: calc(30s * 3);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.scroll-left {
+  left: max(calc(200px * 10), 100%);
+  animation-name: scrollLeft;
+}
+
+.scroll-right {
+  right: max(calc(200px * 10), 100%);
+  animation-name: scrollRight;
+}
+
+.scroll-item-1 {
+  /* animation-delay: calc(30s / 8 * (8-1) * -1); */
+  /* animation-delay: (30s / 8 * (8 - 1) * -1); */
+  /* 30 / 10 * 9 */
+  animation-delay: calc(-27s * 3);
+}
+.scroll-item-2 {
+  /* animation-delay: calc(30s / 8 * (8-1) * -1); */
+  /* animation-delay: (30s / 8 * (8 - 1) * -1); */
+  /* 30 / 10 * 8 */
+  animation-delay: calc(-24s * 3);
+}
+.scroll-item-3 {
+  /* animation-delay: calc(30s / 8 * (8-1) * -1); */
+  /* animation-delay: (30s / 8 * (8 - 1) * -1); */
+  animation-delay: calc(-21s * 3);
+}
+
+.scroll-item-4 {
+  /* animation-delay: calc(30s / 8 * (8-2) * -1); */
+  /* animation-delay: (30s / 8 * (8 - 2) * -1); */
+  animation-delay: calc(-18s * 3);
+}
+
+.scroll-item-5 {
+  /* animation-delay: calc(30s / 8 * (8-3) * -1); */
+  /* animation-delay: (30s / 8 * (8 - 3) * -1); */
+  animation-delay: calc(-15s * 3);
+}
+
+.scroll-item-6 {
+  /* animation-delay: calc(30s / 8 * (8-4) * -1); */
+  /* animation-delay: (30s / 8 * (8 - 4) * -1); */
+  animation-delay: calc(-12s * 3);
+}
+
+.scroll-item-7 {
+  /* animation-delay: calc(30s / 8 * (8-5) * -1); */
+  /* animation-delay: (30s / 8 * (8 - 5) * -1); */
+  animation-delay: calc(-9s * 3);
+}
+
+.scroll-item-8 {
+  /* animation-delay: calc(30s / 8 * (8-6) * -1); */
+  /* animation-delay: (30s / 8 * (8 - 6) * -1); */
+  animation-delay: calc(-6s * 3);
+}
+
+.scroll-item-9 {
+  /* animation-delay: calc(30s / 8 * (8-7) * -1); */
+  /* animation-delay: (30s / 8 * (8 - 7) * -1); */
+  animation-delay: calc(-3s * 3);
+}
+
+.scroll-item-10 {
+  /* animation-delay: calc(30s / 8 * (8-8) * -1); */
+  /* animation-delay: (30s / 8 * (8 - 8) * -1); */
+  animation-delay: calc(0s * 3);
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+
+@keyframes scrollRight {
+  to {
+    right: -200px;
   }
 }
